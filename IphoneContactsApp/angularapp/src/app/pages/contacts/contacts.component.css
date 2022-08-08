@@ -1,0 +1,19 @@
+.contact-name:hover{
+    cursor: pointer;
+    font-size: 17px;
+   
+}
+
+.contact-name{
+    padding: 10px;
+    transition: 0.3s;
+    border-bottom: 1px solid rgb(215, 214, 214);
+
+}
+
+#contact-category{
+    background-color: rgb(215, 214, 214);
+    font-weight: bold;
+    padding: 10px;
+   
+}

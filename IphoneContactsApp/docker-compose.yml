@@ -1,0 +1,24 @@
+version: '2'
+
+services: # Tüm Docker container'larımız 'services' altında olacak  
+  angular: # Angular client için tanımlama
+    build: angularapp # imaj adı
+    ports: # port yönlendirmeleri
+      - "4200:4200"
+    volumes:
+      - ./angularapp/:/var/www/app
+
+  express: # Express server için tanımlama
+    build: ./api # imaj adı
+    ports: # port yönlendirmeleri
+      - "3000:3000"
+    environment:
+     - MONGO_URL=mongodb://database/Contacts-App
+    links:
+      - database
+  database: # Mongo server için tanımlama
+    image: mongo # imaj adı
+    volumes:
+      - "/data/db:/data/db"
+    ports: # port yönlendirmeleri
+      - "27017:27017"

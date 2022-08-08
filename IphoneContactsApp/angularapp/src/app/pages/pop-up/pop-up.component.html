@@ -1,0 +1,15 @@
+<div *ngIf="this.popUpType == 'remove'" >
+    <p class="text text-dark" style="font-size:17px; margin: 10px;">Are you sure you want to delete this contact?</p>
+    <br>
+
+<div id="buttons" class=" d-flex" style="margin-left: 35px;" >
+    <button class="btn btn-danger d-flex justify-content-start" style="margin-right: 70px; " (click)="deleteContact()">
+        Delete Contact
+    </button>
+ 
+    <button class="btn btn-primary  d-flex justify-content-end" (click)="closeDialog()">
+        Cancel
+    </button>
+
+</div>
+</div>

@@ -1,0 +1,94 @@
+<div id="contact-details-header" class="d-flex justify-content-between">
+    <p id="contacts-nav" class="d-flex justify-content-start display-7 text-primary" [routerLink]="['/']">
+        <fa-icon [icon]="faAngleLeft" style="margin-right:3px"></fa-icon> Contacts
+    </p>
+    <p id="contact-placeholder" class="d-flex justify-content-center display-7" style="visibility: hidden;"></p>
+    <p id="edit-contact" class="d-flex justify-content-end display-7 text-primary"
+        [routerLink]="['/edit-contact',this.contact_id]">Edit</p>
+</div>
+
+<div id="container" class="contact-details">
+    <div class="images d-flex justify-content-center">
+       
+        <div class="contact-photo"  *ngIf="!imageSrc"> </div>
+
+        <img *ngIf="imageSrc" [src]="imageSrc" class="uploaded-photo d-flex justify-content-center">
+      
+
+    </div>
+
+
+    <h2 id="contact-name" class="text-center">{{this.name}} <span
+            *ngIf="this.surname!=='' || !this.surname">{{this.surname}}</span></h2>
+    <p id="contact-company" class="text-center display-7" *ngIf="this.company">{{this.company}}</p>
+
+    <div class="navigations text-center d-flex justify-content-center">
+        <table>
+            <tr>
+                <th>
+                    <fa-icon id="message" [icon]="faComment"></fa-icon>
+                </th>
+                <th>
+                    <fa-icon id="facetime" [icon]="faPhone"></fa-icon>
+                </th>
+                <th>
+                    <fa-icon id="vid" [icon]="faVideo"></fa-icon>
+                </th>
+                <th>
+                    <fa-icon id="mail" [icon]="faEnvelope"></fa-icon>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <p id="msg-lbl">message</p>
+                </td>
+                <td>
+                    <p id="facetime-lbl">facetime</p>
+                </td>
+                <td>
+                    <p id="vid-lbl">video</p>
+                </td>
+                <td>
+                    <p id="mail-lbl">mail</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="contact-phone d-flex">
+        <ul>
+            <li class="mobile-label">mobile</li>
+            <li class="phone-number text-primary">{{this.phone}}</li>
+        </ul>
+
+    </div>
+
+    <hr>
+
+    <div class="contact-phone d-flex">
+        <ul>
+            <li class="mobile-label">mail</li>
+            <li class="phone-number text-primary">{{this.mail}}</li>
+        </ul>
+
+    </div>
+
+
+    <hr>
+
+    <div class="contact-phone d-flex">
+        <ul>
+            <li class="mobile-label">addres</li>
+            <li class="phone-number text-primary">{{this.address}}</li>
+        </ul>
+
+    </div>
+    <hr>
+
+    <div class="d-flex text text-danger">
+        <ul>
+         <li class="delete-contact" (click)="openDialog()">Delete Contact</li>
+        </ul>
+    </div>
+
+</div>

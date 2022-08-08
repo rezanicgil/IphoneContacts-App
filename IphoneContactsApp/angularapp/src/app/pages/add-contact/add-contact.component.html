@@ -1,0 +1,120 @@
+<form [formGroup]="addContactForm" (ngSubmit)="onSubmit($event)">
+
+
+    <div id="add-contacts-header" class="d-flex justify-content-between">
+        <a href="/" id="cancel" class="d-flex justify-content-start text-primary display-7">Cancel</a>
+        <p id="new-contact" class="d-flex justify-content-center display-7">New Contact</p>
+        <a type="submit" id="add-contact" class="add-contact d-flex justify-content-end display-7"
+          *ngIf="addContactForm.valid &&  sameName === false"
+          href="javascript:void(0);" style="color: #4285F4" (submit)="onSubmit($event)" (click)="onSubmit($event)"
+          form="addContactForm" >Done</a>
+        <a id="add-contact" class="d-flex justify-content-end display-7"
+          *ngIf="!addContactForm.valid || sameName === true"
+          href="javascript:void(0);">Done</a>
+      </div>
+
+
+      <div class="container">
+
+
+        <div class="row">
+          <!-- Section Titile -->
+         
+          <div class="col-md-6 mt-3 contact-widget-section2 wow animated fadeInLeft" data-wow-delay=".2s">
+            
+            <div class="contact-photo text-center justify-content-center text-primary" *ngIf="!imageUrl"><input type="file"
+                name="file" id="file" name="image" accept="image/*" (change)="onFileChanged($event)" #fileInput/>
+              <label id="add-photo-lbl" for="file" style="cursor: pointer;" *ngIf="!imageUrl">Add Photo</label>
+            </div>
+    
+            <div class="contact-photo text-center justify-content-center text-primary" *ngIf="imageUrl" >
+              <img accept="image/*" width="100%" height="100%" id="uploaded-image" *ngIf="imageUrl" [src]="imageUrl" name="image" class="image" (change)="onFileChanged($event)"
+                style="border-radius: 50%; cursor:default;">
+              <input id="edit-image" type="file" for="uploaded-image" style="margin: 0;" *ngIf="imageUrl" (change) = "onFileChanged($event)">
+              <label id="edit-img-lbl" for="edit-image" style="cursor: pointer;">Edit</label>
+            </div>
+       
+    
+          </div>
+          <!-- contact form -->
+          <div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
+    
+            <!-- Name -->
+            <div class="form-group label-floating">
+    
+              <input class="form-control" id="name" type="text" name="name" placeholder="First name"
+                (change)="onChange($event)" formControlName="name" [(ngModel)]="name">
+              <div *ngIf="addContactForm.controls['name'].invalid && addContactForm.controls['name'].touched"
+                class="error-messages text text-danger">
+                <div *ngIf="addContactForm.controls['name'].errors.required">
+                  Name is required.
+                </div>
+              </div>
+    
+              <div *ngIf="sameName" class="error-messages text text-danger">
+                Contact name {{this.name}} is already exists in the contact list. Please change it.
+              </div>
+    
+              <!-- Last name -->
+              <div class="form-group label-floating">
+                <input class="form-control" id="surname" type="text" name="surname" placeholder="Last name"
+                  [(ngModel)]="surname" formControlName="surname">
+              </div>
+    
+              <!-- Company -->
+              <div class="form-group label-floating">
+                <input class="form-control" id="company" type="text" name="company" placeholder="Company"
+                  [(ngModel)]="company" formControlName="company">
+              </div>
+    
+            </div>
+          </div>
+    
+    
+        </div>
+    
+        <div class="row">
+          <div class="col-md-10 mt-3 wow animated fadeInLeft" data-wow-delay=".2s">
+    
+            <div class="form-group label-floating">
+              <input class="form-control" id="phone" type="text" name="phone" placeholder="add phone"
+                (change)="onChange($event)"  formControlName="phone" [(ngModel)]="phone">
+              <div *ngIf="addContactForm.controls['phone'].invalid && addContactForm.controls['phone'].touched"
+                class="error-messages text text-danger">
+                <div *ngIf="addContactForm.controls['phone'].errors.required">
+                  Phone is required.
+                </div>
+              </div>
+            </div>
+    
+            <div class="form-group label-floating">
+              <input class="form-control" id="mail" type="mail" name="mail" placeholder="add mail"
+                formControlName="mail" [(ngModel)]="mail">
+              <div *ngIf="addContactForm.controls['mail'].invalid && addContactForm.controls['mail'].touched"
+                class="error-messages text text-danger">
+                <div *ngIf="addContactForm.controls['mail'].errors.pattern">
+                  Please anter a valid mail.
+                </div>
+              </div>
+            </div>
+    
+            <div class="form-group label-floating">
+              <input class="form-control" id="address" type="text" name="address" required placeholder="address"
+                (change)="onChange($event)" formControlName="address" [(ngModel)]="address">
+    
+              <div *ngIf="addContactForm.controls['address'].invalid && addContactForm.controls['address'].touched"
+                class="error-messages text text-danger">
+                <div *ngIf="addContactForm.controls['address'].errors.required">
+                  Address is required.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  
+  </form>
+
+
+

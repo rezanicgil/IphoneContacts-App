@@ -1,0 +1,7 @@
+<div *ngFor="let category of result">
+    <div id="contact-category" class="display-7">{{category.key}}</div>
+    <div id= "contact-name" class="contact-name display-7" *ngFor="let contact of category.contacts" (click)="onClick($event)"  [routerLink]="['/contact-details',contact._id]">
+        {{contact.name}} <label *ngIf = 'contact.surname'>{{contact.surname}}</label>
+    </div>
+</div>
+

@@ -1,0 +1,115 @@
+#contact-details-header{
+    margin: 15px;
+   
+}
+
+#contacts-nav{
+    cursor: pointer;
+
+}
+
+#contacts-nav:hover{
+    font-size:15px;
+    
+}
+
+#edit-contact{
+    cursor: pointer;
+
+}
+
+#edit-contact:hover{
+    font-size: 15px;
+}
+
+.contact-photo {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: black;
+    background-image: url("https://filmshotfreezer.files.wordpress.com/2011/07/untitled-1.jpg");
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+
+.navigations{
+    font-size: 20px;
+    color: white;
+    margin-top: 35px;
+}
+
+
+.navigations #message, #facetime, #vid, #mail{
+    border-radius: 50%; padding: 10px 12px 10px 12px; background-color: #4285F4; cursor: pointer;
+}
+
+
+.navigations #message:hover, #facetime:hover, #vid:hover, #mail:hover{
+  background-color: #1f5ec2;
+  transition: 0.2s;
+
+}
+
+#msg-lbl, #facetime-lbl, #vid-lbl, #mail-lbl{
+    color: #4285F4;
+    font-size: 12px;
+    margin: 25px;
+    margin-top: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+#contact-name{
+    margin-bottom: 10px;
+    font-size: 22px;
+    
+}
+
+#contact-company{
+    color: #797979;
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.mobile-label{
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.phone-number{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+#container {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.delete-contact{
+    font-size: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.delete-contact:hover{
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.uploaded-photo{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+
+    margin-bottom: 15px;
+}

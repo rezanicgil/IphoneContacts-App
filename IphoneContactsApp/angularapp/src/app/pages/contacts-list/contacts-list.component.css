@@ -1,0 +1,26 @@
+#add-btn:hover{
+    opacity: 1;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#add-btn{
+    margin-right: 6px;
+    font-size: 21px;
+    transition: 0.3s;
+    
+}
+
+
+#header-of-contacts{
+    margin-top: 10px;
+
+}
+
+#search-bar{
+    margin-bottom: 10px;
+    margin-left: 5px;
+    width: 99%;
+
+}
+

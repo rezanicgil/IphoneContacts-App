@@ -1,0 +1,86 @@
+<div id="edit-contacts-header" class="d-flex justify-content-between">
+    <a href="/" id="cancel" class="d-flex justify-content-start text-primary display-7">Cancel</a>
+    <p id="new-contact" class="d-flex justify-content-center display-7" style="visibility: hidden;"></p>
+    <a type="submit" id="edit-contact" class="d-flex justify-content-end display-7" *ngIf="this.status === true"
+      href="javascript:void(0);" style="color: #4285F4" (submit)="onSubmit($event)" (click)="onSubmit($event)"
+      form="contact-form">Done</a>
+    <a id="edit-contact-inactive" class="d-flex justify-content-end display-7" *ngIf="this.status === false"
+      href="javascript:void(0);">Done</a>
+  </div>
+  
+  <div class="container">
+    <form role="form" method="post" id="contactForm" name="contact-form" data-toggle="validator"
+      (submit)="onSubmit($event)">
+  
+      <div class="row">
+        <!-- Section Title -->
+        <div class="col-md-6 mt-3 contact-widget-section2 wow animated fadeInLeft" data-wow-delay=".2s">
+         
+          <div class="contact-photo text-center justify-content-center text-primary" *ngIf="!imageUrl"><input type="file"
+            name="file" id="file" name="image" accept="image/*" (change)="onFileChanged($event)" #fileInput/>
+          <label id="add-photo-lbl" for="file" style="cursor: pointer;" *ngIf="!imageUrl">Add Photo</label>
+        </div>
+
+        <div class="contact-photo text-center justify-content-center text-primary" *ngIf="imageUrl" >
+          <img accept="image/*" width="100%" height="100%" id="uploaded-image" *ngIf="imageUrl" [src]="imageSrc" name="image" class="image" (change)="onFileChanged($event)"
+            style="border-radius: 50%; cursor:default;">
+          <input id="edit-image" type="file" for="uploaded-image" style="margin: 0;" *ngIf="imageUrl" (change) = "onFileChanged($event)">
+          <label id="edit-img-lbl" for="edit-image" style="cursor: pointer;">Edit</label>
+        </div>
+       
+  
+        </div>
+        <!-- contact form -->
+        <div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
+  
+          <!-- Name -->
+          <div class="form-group label-floating">
+  
+            <input class="form-control" id="name" type="text" name="name" required
+              data-error="Please enter the contact name" placeholder="First name" (change)="onChange($event)"
+              [(ngModel)]="name" >
+            <div class="help-block with-errors"></div>
+          </div>
+          <!-- Last name -->
+          <div class="form-group label-floating">
+            <input class="form-control" id="surname" type="text" name="surname" placeholder="Last name"
+              [(ngModel)]="surname" (change)="onChange($event)">
+          </div>
+  
+          <!-- Company -->
+          <div class="form-group label-floating">
+            <input class="form-control" id="company" type="text" name="company" placeholder="Company" [(ngModel)]="company" (change)="onChange($event)">
+          </div>
+  
+  
+  
+        </div>
+  
+        <div class="row">
+          <div class="col-md-10 mt-3 wow animated fadeInLeft" data-wow-delay=".2s">
+  
+            <div class="form-group label-floating">
+              <input class="form-control" id="phone" type="text" name="phone" required
+                data-error="Please enter the phone number" placeholder="add phone" (change)="onChange($event)"
+                [(ngModel)]="phone">
+              <div class="help-block with-errors"></div>
+            </div>
+  
+            <div class="form-group label-floating">
+              <input class="form-control" id="mail" type="mail" name="mail" required data-error="Please enter valid mail"
+                placeholder="add mail" [(ngModel)]="mail" (change)="onChange($event)">
+              <div class="help-block with-errors"></div>
+            </div>
+  
+            <div class="form-group label-floating">
+              <input class="form-control" id="address" type="text" name="address" required
+                data-error="Please enter the contact address" placeholder="address" (change)="onChange($event)"
+                [(ngModel)]="address">
+            </div>
+  
+  
+          </div>
+        </div>
+      </div>
+  
+    </form>

@@ -1,0 +1,106 @@
+#new-contact{
+    text-decoration: none;
+    
+}
+
+#cancel{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#cancel:hover{
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+
+
+#edit-contacts-header{
+    text-decoration: none;
+    margin: 15px;
+}
+
+#edit-contact{
+    text-decoration: none;
+    color: lightgray;
+    cursor: pointer;
+}
+
+#edit-contact-inactive{
+    text-decoration: none;
+    color: lightgray;
+    cursor: pointer;
+}
+
+
+#edit-contact:hover{
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+#name{
+    align-items: center;
+}
+
+input {border:0;outline:0; border-bottom: 1px solid rgb(206, 206, 206); margin-bottom: 25px; }
+
+
+
+.contact-photo {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: black;
+    background-image: url("https://filmshotfreezer.files.wordpress.com/2011/07/untitled-1.jpg");
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 25px;
+   
+}
+
+.contact-photo input[type='file'] {
+    appearance: initial;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#phone::-webkit-input-placeholder{
+
+    font-weight: 500;
+
+}
+
+#phone{
+    margin-bottom: 25px;
+}
+
+#mail::-webkit-input-placeholder{
+
+    font-weight: 500;
+
+}
+
+#mail{
+    margin-bottom: 25px;
+}
+
+
+#address::-webkit-input-placeholder{
+
+    font-weight: 500;
+    
+}
+
+#address{
+    margin-bottom: 25px;
+}
+
+#add-photo-lbl:hover{
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+#edit-img-lbl:hover{
+    font-size: 15px;
+    transition: 0.3s;
+}

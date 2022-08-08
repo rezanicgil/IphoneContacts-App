@@ -1,0 +1,14 @@
+
+<div id="header-of-contacts" class="d-flex justify-content-between">
+    <p class="d-flex justify-content-start" style="visibility:hidden;"></p>
+    <p id="contacts-header" class="d-flex justify-content-center display-7">Contacts</p> 
+    <fa-icon id="add-btn" class="d-flex justify-content-end display-7 text-primary" [icon]="faPlus" title="Add new contact" [routerLink]="['/add-contact']"  ></fa-icon> 
+  </div>
+
+<div id="search-bar" class="input-group rounded text-center">
+    <input  type="search" class="form-control rounded text-center" mdInput placeholder="Search" aria-label="Search" aria-describedby="search-addon" (input)="searchValue(searchVal.value)" #searchVal/>
+</div>
+<div class="example-container">
+
+
+  <app-contacts [item]="currentItem" [result]="results"></app-contacts>
