@@ -1,5 +1,5 @@
 # Iphone-Contacts-App
-A simple iphone contacts app which helps to create, view and edit the contacts. 
+A simple iphone contacts app which helps to create, view, edit and delete the contacts. 
 
 
 ## Dependencies
