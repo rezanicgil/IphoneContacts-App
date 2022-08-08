@@ -24,6 +24,7 @@ A simple iphone contacts app which helps to create, view and edit the contacts.
 - Clone the project
  --`git clone <projectUrl>`
 - Install the dependencies
+ -- `cd IphoneContactsApp`
  --`cd angularapp && npm i`
  --`cd api && npm i`
 - Run the frontend
@@ -39,4 +40,5 @@ A simple iphone contacts app which helps to create, view and edit the contacts.
  --`git clone <projectUrl>`
  
 - Build the docker
+ -- `cd IphoneContactsApp`
  -- `docker-compose up --build`
