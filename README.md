@@ -13,10 +13,11 @@ A simple iphone contacts app which helps to create, view and edit the contacts.
 
 ## Tech Stack
 - [**Angular**](https://angular.io/) - for Front-end Framework
-- [**MongoDB**](https://www.mongodb.com/) - for Databse
+- [**MongoDB**](https://www.mongodb.com/) - for Database
 - [**Docker**](https://docs.docker.com/desktop/#download-and-install) - for production generation
 - [**Docker-compose**](https://docs.docker.com/compose/install/) - for running the production app
-
+- [**Express.js**](https://expressjs.com/) - for Nodejs
+- 
 ## Steps to run the project
 #### Classical Way
 
