@@ -1,27 +1,44 @@
-# Angularapp
+# Iphone-Contacts-App
+A simple iphone contacts app which helps to create, view, edit and delete the contacts. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
-## Development server
+## Dependencies
+- **npm** -- V 8.16.0
+- **node** -- V 16.14.2
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
+- Create, view, edit and delete a contact. 
+- Sorting contacts by search value. 
+- Validating input values.
 
-## Code scaffolding
+## Tech Stack
+- [**Angular**](https://angular.io/) - for Front-end Framework
+- [**MongoDB**](https://www.mongodb.com/) - for Database
+- [**Docker**](https://docs.docker.com/desktop/#download-and-install) - for production generation
+- [**Docker-compose**](https://docs.docker.com/compose/install/) - for running the production app
+- [**Express.js**](https://expressjs.com/) - for Nodejs
+- 
+## Steps to run the project
+#### Classical Way
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Clone the project
+ --`git clone <projectUrl>`
+- Install the dependencies
+ -- `cd IphoneContactsApp`
+ --`cd angularapp && npm i`
+ --`cd api && npm i`
+- Run the frontend
+ --`cd angularapp`
+ --`ng serve`
+- Run the backend
+  --`cd api`
+ --`nodmeon server.js`
+ 
+#### Easy Way
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Clone the project
+ --`git clone <projectUrl>`
+ 
+- Build the docker
+ -- `cd IphoneContactsApp`
+ -- `docker-compose up --build`
