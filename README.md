@@ -43,5 +43,5 @@ A simple iphone contacts app which helps to create, view, edit and delete the co
  -- `cd IphoneContactsApp`
  -- `docker-compose up --build`
  
- ###Heroku
+ #### Heroku
 - After docker compose up you can use the app by the clicking this --> [**Heroku app**](https://contacts-iphone.herokuapp.com/contacts-list)
