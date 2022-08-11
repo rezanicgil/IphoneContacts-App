@@ -17,7 +17,7 @@ A simple iphone contacts app which helps to create, view, edit and delete the co
 - [**Docker**](https://docs.docker.com/desktop/#download-and-install) - for production generation
 - [**Docker-compose**](https://docs.docker.com/compose/install/) - for running the production app
 - [**Express.js**](https://expressjs.com/) - for Nodejs
-- 
+
 ## Steps to run the project
 #### Classical Way
 
