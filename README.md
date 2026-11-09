@@ -1,47 +1,33 @@
-# Iphone-Contacts-App
-A simple iphone contacts app which helps to create, view, edit and delete the contacts. 
+# iPhone Contacts App
 
+A web-based contact directory built in 2022. Create a contact, find it in the list, update its details or remove it. The Angular client, Express API and MongoDB database can run together with Docker Compose.
 
-## Dependencies
-- **npm** -- V 8.16.0
-- **node** -- V 16.14.2
+## Architecture
 
-## Features
-- Create, view, edit and delete a contact. 
-- Sorting contacts by search value. 
-- Validating input values.
+```mermaid
+flowchart LR
+    UI[Angular pages] --> Client[HTTP service]
+    Client --> API[Express contact routes]
+    API --> Model[Mongoose model]
+    Model --> DB[(MongoDB)]
+```
 
-## Tech Stack
-- [**Angular**](https://angular.io/) - for Front-end Framework
-- [**MongoDB**](https://www.mongodb.com/) - for Database
-- [**Docker**](https://docs.docker.com/desktop/#download-and-install) - for production generation
-- [**Docker-compose**](https://docs.docker.com/compose/install/) - for running the production app
-- [**Express.js**](https://expressjs.com/) - for Nodejs
+The client calls the API on localhost port 3000. The API uses the Compose service name to connect to MongoDB. Keeping HTTP access in the Angular service keeps the contact pages focused on form and list behavior. For a deployment on another host, the client endpoint and database configuration need to change.
 
-## Steps to run the project
-#### Classical Way
+## Run locally
 
-- Clone the project
- --`git clone <projectUrl>`
-- Install the dependencies
- -- `cd IphoneContactsApp`
- --`cd angularapp && npm i`
- --`cd api && npm i`
-- Run the frontend
- --`cd angularapp`
- --`ng serve`
-- Run the backend
-  --`cd api`
- --`nodmeon server.js`
- 
-#### Easy Way
+Clone this repository and start the stack from the directory containing the Compose file.
 
-- Clone the project
- --`git clone <projectUrl>`
- 
-- Build the docker
- -- `cd IphoneContactsApp`
- -- `docker-compose up --build`
- 
- #### Heroku
-- After docker compose up you can use the app by the clicking this --> [**Heroku app**](https://contacts-iphone.herokuapp.com/contacts-list)
+```sh
+git clone https://github.com/rezanicgil/IphoneContacts-App.git
+cd IphoneContacts-App/IphoneContactsApp
+docker compose up --build
+```
+
+Open http://localhost:4200 for the interface. The compose configuration binds the database data directory to /data/db on the Docker host. Use synthetic contacts when trying the demo.
+
+## Verify the flow
+
+Create a sample contact, open its details, edit it, refresh the list and confirm the new value. Delete that same sample contact and confirm it disappears. The API exposes `GET /contacts-list` and `GET /contact-details/:_id` for readback.
+
+The Angular project contains component and service specs. Run `npm test` in `IphoneContactsApp/angularapp` with the matching Angular dependencies and a browser installed. The Express package has a placeholder test script. The historical toolchain used Node 16 and Angular 14. End-to-end execution with current container images has not been verified.
